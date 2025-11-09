@@ -839,6 +839,54 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+
+ /* Go to Top Button Style - Updated Professional Design */
+#goTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: none; /* hidden by default */
+    opacity: 0.9;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+#goTopBtn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    opacity: 1;
+}
+
+#goTopBtn:active {
+    transform: translateY(-2px) scale(0.95);
+}
+
+/* Add animation for appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+/* Update the button's display property in JavaScript */
     </style>
 
 
@@ -847,6 +895,8 @@
 </head>
 <body>
     <div class="bg-animation"></div>
+<!-- Go to Top Button -->
+<button id="goTopBtn" title="Go to top">⬆</button>
 
     <!-- Navigation -->
     <nav>
@@ -945,14 +995,14 @@
             <div class="skill-category">
                 <div class="skill-header">
                     <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Tools & DevOps</h3>
+                    <h3>Tools & Integrations</h3>
                 </div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Canva</span>
                     <span class="skill-tag">GitHub</span>
                     <span class="skill-tag">VPS Hosting</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">WhatsApp Meta</span>
+                    <span class="skill-tag">Payment Integration</span>
                 </div>
             </div>
         </div>
@@ -1254,6 +1304,30 @@
   </div>
 </footer>
 
+<script>
+  const goTopBtn = document.getElementById("goTopBtn");
+
+// Update the scroll event handler
+window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        goTopBtn.style.display = "flex";
+        goTopBtn.style.justifyContent = "center";
+        goTopBtn.style.alignItems = "center";
+        goTopBtn.style.animation = "fadeInUp 0.4s ease forwards";
+    } else {
+        goTopBtn.style.display = "none";
+        goTopBtn.style.animation = "none";
+    }
+};
+
+  // Scroll to top smoothly
+  goTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
 
     <script>
         // Theme Toggle

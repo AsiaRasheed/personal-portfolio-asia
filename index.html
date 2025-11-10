@@ -920,8 +920,11 @@
 
 
  <!-- Add this before closing head tag -->
+<!-- Add this before closing head tag -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    </head>
 <body>
     <div class="bg-animation"></div>
 <!-- Go to Top Button -->
@@ -956,7 +959,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I'm <span class="gradient-text">Asia Rasheed</span></h1>
-            <p class="subtitle">Full Stack Developer</p>
+          <!-- <p class="subtitle">Full Stack Developer</p> -->
+            <p class="subtitle"><span id="typed" aria-live="polite"></span></p>
             <p>Passionate about creating elegant solutions to complex problems. I specialize in building modern, scalable web applications with cutting-edge technologies.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">
@@ -965,7 +969,7 @@
                <button class="btn-secondary" id="downloadResume">
     <i class="fas fa-download"></i> Download Resume
 </button>
-
+ 
             </div>
         </div>
         <div class="hero-image">
@@ -1529,4 +1533,24 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             observer.observe(el);
         });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.Typed) {
+    new Typed('#typed', {
+      strings: [
+        'Full Stack Developer',
+        'Video Editor',
+        'Frontend Developer'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true,
+      smartBackspace: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+  }
+});
+</script>
 </body>
